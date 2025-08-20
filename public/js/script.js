@@ -27,14 +27,15 @@ $(document).ready(function(){
     }
   });
 
-  // Remove validation errors dynamically
   $('#company, #line, #machine, #product, #start_datetime').on('change input', function() {
-      let errorId = '#error-' + $(this).attr('id');
-      $(errorId).text('');
-      $('#errorMessage').text('');
-      $('#successMessage').text('');
-      $('#machineMessage').text('');
-  });
+        let id = $(this).attr('id');
+        let errorId = (id === 'start_datetime') ? '#error-datetime' : '#error-' + id;
+        $(errorId).text('');
+        $('#errorMessage').text('');
+        $('#successMessage').text('');
+        $('#machineMessage').text('');
+    });
+
 
   // -------- Company change --------
   $('#company').on('change', function(){
@@ -118,7 +119,6 @@ $(document).ready(function(){
     }
   });
 
-  // -------- Update machine status circle --------
   $('#machine').on('change', function(){
     let selected = $(this).find('option:selected');
     let status = selected.data('status'); 
