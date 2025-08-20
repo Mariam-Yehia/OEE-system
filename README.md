@@ -59,19 +59,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-Here’s the complete `README.md` text ready to copy and paste:
-
-````markdown
-# Laravel 12 Project
-
-[![PHP](https://img.shields.io/badge/PHP-8.1+-blue.svg)](https://www.php.net/)
-[![Laravel](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
-[![MySQL](https://img.shields.io/badge/MySQL-5.7+-blue.svg)](https://www.mysql.com/)
-
-This is a Laravel 12 project with migrations, models, controllers, seeders, and a MySQL database. This README explains how to run the project locally.
-
 ---
+
 
 ## Prerequisites
 
