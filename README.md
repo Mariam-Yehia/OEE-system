@@ -188,22 +188,4 @@ php artisan migrate:rollback
 php artisan migrate:fresh --seed
 ```
 
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-## Contact
-
-For questions or support, reach out at `your-email@example.com`.
-
-```
-
-You can save this as `README.md` in your project root and commit it to GitHub.  
-
-Do you want me to also make a **Docker version** so it runs without manually installing PHP/MySQL?
-```
 
