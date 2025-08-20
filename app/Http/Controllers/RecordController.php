@@ -8,14 +8,13 @@ use App\Models\Company;
 use App\Models\ProductionLine;
 use App\Models\Machine;
 use App\Models\Product;
-use Illuminate\Support\Facades\Auth;
 
 class RecordController extends Controller
 {
    
     public function store(Request $request)
     {
-        //validate input with custom error messages
+        //Validate input with custom error messages
         $validated = $request->validate([
             'company_id'     => 'required|exists:companies,id',
             'line_id'        => 'required|exists:production_lines,id',
@@ -40,7 +39,7 @@ class RecordController extends Controller
             'start_datetime.after_or_equal' => 'Start date & time cannot be in the past.',
         ]);
 
-        //extra validation to ensure relationships are correct
+        //Extra validation to ensure relationships are correct
         $company = Company::find(id: $validated['company_id']);
         $line    = ProductionLine::find($validated['line_id']);
         $machine = Machine::find($validated['machine_id']);
@@ -76,6 +75,8 @@ class RecordController extends Controller
         $record = MachineRecord::create([
             'product_id'  => $validated['product_id'],
             'machine_id'  => $validated['machine_id'],
+            'user_id'     => 1, //fallback user_id if no authentication
+            'quantity'    => 0,               //will be updated later
             'start_time'  => $validated['start_datetime'],
             'end_time'    => null,
         ]);
